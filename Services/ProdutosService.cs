@@ -14,5 +14,11 @@ namespace MinimalAPP.Services
 
             return Produto;
         }
+
+        public ProdutoModel Get(string? nome, int? quantidade)
+        {
+            var result = ProdutosRepository.Produtos.Find(x => x.Nome == nome && x.Quantidade == quantidade);
+            return result;
+        }
     }
 }
